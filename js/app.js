@@ -80,13 +80,13 @@ $(function () {
 
     // お知らせの内容の開閉
     var post_num = 1;
-    while ($('.post-' + post_num).length) {
+    while ($('.post-oder-' + post_num).length) {
         (function (post_num) {
-            $('.post-' + post_num + ' .news-detail-head').click(function (event) {
+            $('.post-oder-' + post_num + ' .news-detail-head').click(function (event) {
                 for (var i = 1; i <= 3; i++) {
-                    $('.post-' + post_num + ' .news-detail-arrow-part' + i).toggleClass('news-detail-arrow-part' + i + '-open');
+                    $('.post-oder-' + post_num + ' .news-detail-arrow-part' + i).toggleClass('news-detail-arrow-part' + i + '-open');
                 }
-                $('.post-' + post_num + ' .news-detail-body').slideToggle(300);
+                $('.post-oder-' + post_num + ' .news-detail-body').slideToggle(300);
             });
         }(post_num));
         post_num++;

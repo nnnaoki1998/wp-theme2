@@ -10,16 +10,16 @@
                 </div>
                 <ul class="list-unstyled font-size-20px mb-0 shadow-black">
                     <li class="mb-20px">
-                        <a href="about.html" class="text-white hover-opacity-05">居酒屋について</a>
+                        <a href="<?php echo home_url(); ?>/about" class="text-white hover-opacity-05">居酒屋について</a>
                     </li>
                     <li class="mb-20px">
-                        <a href="menu.html" class="text-white hover-opacity-05">おしながき</a>
+                        <a href="<?php echo home_url(); ?>/menu" class="text-white hover-opacity-05">おしながき</a>
                     </li>
                     <li class="mb-20px">
-                        <a href="index.html#store_section" class="text-white hover-opacity-05">店舗情報</a>
+                        <a href="<?php echo home_url(); ?>/#store_section" class="text-white hover-opacity-05">店舗情報</a>
                     </li>
                     <li>
-                        <a href="news.html" class="text-white hover-opacity-05">お知らせ</a>
+                        <a href="<?php echo home_url(); ?>/news" class="text-white hover-opacity-05">お知らせ</a>
                     </li>
                 </ul>
             </div>
@@ -124,36 +124,22 @@
             <a href="<?php echo home_url(); ?>/news" class="color-666666 hover-opacity-05">お知らせ</a>
         </h3>
         <ul class="news-list col-12 col-md-10 list-unstyled font-size-18px m-0 px-0">
-            <li class="row mx-0">
-                <time class="news-list-date col-12 col-md-2 d-inline-block color-666666">2019.11.29</time>
+            <?php while(have_posts()): the_post(); ?>
+            <?php $classes = ['news','row','mx-0']; ?>
+            <li id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
+                <time datatime="<?php the_time('Y-m-d'); ?>"
+                    class="news-list-date col-12 col-md-2 d-inline-block color-666666">
+                    <?php echo get_post_time('Y.m.d'); ?>
+                </time>
                 <span class="col-12 col-md-10 d-inline-block p-relative px-md-4">
-                    <a href="<?php echo home_url(); ?>/news"
+                    <a href="<?php echo home_url(); ?>/news#post-<?php the_ID(); ?>"
                         class="color-666666 hover-opacity-05 font-size-16px font-size-md-18px">
-                        オープンしました1
+                        <?php the_title(); ?>
                         <span class="news-list-arrow p-absolute">&#8250;</span>
                     </a>
                 </span>
             </li>
-            <li class="row mx-0">
-                <time class="news-list-date col-12 col-md-2 d-inline-block color-666666">2019.11.29</time>
-                <span class="col-12 col-md-10 d-inline-block p-relative px-md-4">
-                    <a href="<?php echo home_url(); ?>/news"
-                        class="color-666666 hover-opacity-05 font-size-16px font-size-md-18px">
-                        オープンしました2
-                        <span class="news-list-arrow p-absolute">&#8250;</span>
-                    </a>
-                </span>
-            </li>
-            <li class="row mx-0">
-                <time class="news-list-date col-12 col-md-2 d-inline-block color-666666">2019.11.29</time>
-                <span class="col-12 col-md-10 d-inline-block p-relative px-md-4">
-                    <a href="<?php echo home_url(); ?>/news"
-                        class="color-666666 hover-opacity-05 font-size-16px font-size-md-18px">
-                        オープンしました3
-                        <span class="news-list-arrow p-absolute">&#8250;</span>
-                    </a>
-                </span>
-            </li>
+            <?php endwhile; ?>
         </ul>
     </section>
     <?php else: ?>

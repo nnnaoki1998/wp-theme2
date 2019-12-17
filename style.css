@@ -275,7 +275,7 @@ main {
 }
 
 .center-img-section {
-    padding: 0 30px;
+    padding: 0 5%;
 }
 
 .left-img-section {
@@ -404,6 +404,7 @@ main {
 .menu-section-img {
     width: 250%;
     overflow: hidden;
+    margin-bottom: 0;
 }
 
 .menu-section-img li {
