@@ -3,38 +3,40 @@
     <div id="top_caption">
         <div class="p-relative h-100">
             <div id="top_caption_inner" class=" p-absolute b-100px l-0 d-none d-md-block">
-                <div class="mb-50px">
+                <div class="mb-50px wow fadeInLeft" data-wow-duration="1.2s" data-wow-delay="0.0s">
                     <a href="" class="hover-opacity-05">
                         <img src="<?php echo get_template_directory_uri(); ?>/img/logo_white.png" class="w-180px">
                     </a>
                 </div>
                 <ul class="list-unstyled font-size-20px mb-0 shadow-black">
-                    <li class="mb-20px">
+                    <li class="mb-20px wow fadeInLeft" data-wow-duration="1.2s" data-wow-delay="0.1s">
                         <a href="<?php echo home_url(); ?>/about" class="text-white hover-opacity-05">居酒屋について</a>
                     </li>
-                    <li class="mb-20px">
+                    <li class="mb-20px wow fadeInLeft" data-wow-duration="1.2s" data-wow-delay="0.2s">
                         <a href="<?php echo home_url(); ?>/menu" class="text-white hover-opacity-05">おしながき</a>
                     </li>
-                    <li class="mb-20px">
-                        <a href="<?php echo home_url(); ?>/#store_section" class="text-white hover-opacity-05">店舗情報</a>
+                    <li class="mb-20px wow fadeInLeft" data-wow-duration="1.2s" data-wow-delay="0.3s">
+                        <a href="<?php echo home_url(); ?>/#store_section"
+                            class="link-access text-white hover-opacity-05">店舗情報</a>
                     </li>
-                    <li>
+                    <li class="wow fadeInLeft" data-wow-duration="1.2s" data-wow-delay="0.4s">
                         <a href="<?php echo home_url(); ?>/news" class="text-white hover-opacity-05">お知らせ</a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
-    <section id="about_section" class="section-content header-disp-point color-666666">
+    <section id="about_section" class="section-content header-disp-point color-666666 wow fadeIn"
+        data-wow-duration="1.2s" data-wow-delay="0.2s">
         <div class="row m-0">
-            <div class="col-3 pt-3 px-0">
+            <div class="col-2 col-md-3 pt-3 px-0">
                 <h2 class="index-section-ttl vertical mx-auto font-size-26px">
                     <span>
                         居酒屋について
                     </span>
                 </h2>
             </div>
-            <div class="section-detail col-9 p-relative">
+            <div class="section-detail col-10 col-md-9 p-relative">
                 <h3 class="section-detail-head">
                     長崎でしか味わえないお料理を提供いたします
                 </h3>
@@ -55,19 +57,20 @@
             </div>
         </div>
     </section>
-    <section class="center-img-section">
+    <section class="center-img-section wow fadeIn" data-wow-duration="1.2s" data-wow-delay="0.2s">
         <img src="<?php echo get_template_directory_uri(); ?>/img/sake2.jpg" class="w-100 h-lg-100vh">
     </section>
-    <section id="menu_section" class="section-content color-666666">
+    <section id="menu_section" class="section-content color-666666 wow fadeIn" data-wow-duration="1.2s"
+        data-wow-delay="0.2s">
         <div class="row m-0">
-            <div class="col-3 pt-3 px-0">
+            <div class="col-2 col-md-3 pt-3 px-0">
                 <h2 class="index-section-ttl vertical mx-auto font-size-26px">
                     <span>
                         おしながき
                     </span>
                 </h2>
             </div>
-            <div class="section-detail col-9 p-relative">
+            <div class="section-detail col-10 col-md-9 p-relative">
                 <h3 class="section-detail-head">
                     長崎でしか味わえないお料理を提供いたします
                 </h3>
@@ -88,19 +91,20 @@
             </div>
         </div>
     </section>
-    <section class="left-img-section">
+    <section class="left-img-section wow fadeIn" data-wow-duration="1.2s" data-wow-delay="0.2s">
         <img src="<?php echo get_template_directory_uri(); ?>/img/sushi.jpg" class="w-100 h-lg-100vh">
     </section>
-    <section id="store_section" class="section-content color-666666">
+    <section id="store_section" class="section-content color-666666 wow fadeIn" data-wow-duration="1.2s"
+        data-wow-delay="0.2s">
         <div class="row m-0">
-            <div class="col-3 pt-3 px-0">
+            <div class="col-2 col-md-3 pt-3 px-0">
                 <h2 class="index-section-ttl vertical mx-auto font-size-26px">
                     <span>
                         店舗情報
                     </span>
                 </h2>
             </div>
-            <div class="section-detail col-9 p-relative">
+            <div class="section-detail col-10 col-md-9 p-relative">
                 <h3 class="section-detail-head">
                     居酒屋
                 </h3>
@@ -124,8 +128,9 @@
             <a href="<?php echo home_url(); ?>/news" class="color-666666 hover-opacity-05">お知らせ</a>
         </h3>
         <ul class="news-list col-12 col-md-10 list-unstyled font-size-18px m-0 px-0">
+            <?php $i = 0; ?>
             <?php while(have_posts()): the_post(); ?>
-            <?php $classes = ['news','row','mx-0']; ?>
+            <?php $classes = ['news','row','mx-0' ,'font-weight-normal']; ?>
             <li id="post-<?php the_ID(); ?>" <?php post_class($classes); ?>>
                 <time datatime="<?php the_time('Y-m-d'); ?>"
                     class="news-list-date col-12 col-md-2 d-inline-block color-666666">
@@ -139,6 +144,12 @@
                     </a>
                 </span>
             </li>
+            <?php
+                    $i++;
+                    if ($i >= 5):
+                        break;
+                    endif;
+                    ?>
             <?php endwhile; ?>
         </ul>
     </section>

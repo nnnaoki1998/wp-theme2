@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Izakaya</title>
+    <title><?php wp_title('|', true, 'right'); bloginfo('name'); ?></title>
+    <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/img/site_icon.jpg">
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -50,7 +51,7 @@
                     </li>
                     <li class="col-1-1 col-md-1-5 y-center py-4 p-md-0">
                         <a href="<?php echo home_url(); ?>#store_section"
-                            class="nav-link-access color-666666 hover-color-999999">
+                            class="nav-link-access link-access color-666666 hover-color-999999">
                             店舗情報
                         </a>
                     </li>

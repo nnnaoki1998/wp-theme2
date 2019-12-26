@@ -38,7 +38,7 @@
                                     </span>
                                 </div>
                             </dt>
-                            <dd class="news-detail-body overflow-hidden mb-0">
+                            <dd class="news-detail-body overflow-hidden mb-0 font-weight-normal">
                                 <p>
                                     <?php the_content(); ?>
                                 </p>
